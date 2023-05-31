@@ -20,6 +20,11 @@ To enable the Microsoft Hyper-V feature, you must first enable virtualization in
 
 You can follow the steps documented here: [Step-By-Step: Enabling Hyper-V for Use on Windows 11](https://techcommunity.microsoft.com/t5/educator-developer-blog/step-by-step-enabling-hyper-v-for-use-on-windows-11/ba-p/3745905)
 
+## Shared Folders over Hyper-V
+
+Setting up shared folders in Hyper-V is not a conventional thing to do. Unlike VirtualBox, Hyper-V is not a desktop exclusive hypervisor. To share folders between guest OS running on Hyper-V and the host operating system, we will use SMB file share to share a folder created on host machine with the guest. 
+
+
 
 
 
