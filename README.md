@@ -24,6 +24,23 @@ You can follow the steps documented here: [Step-By-Step: Enabling Hyper-V for Us
 
 Setting up shared folders in Hyper-V is not a conventional thing to do. Unlike VirtualBox, Hyper-V is not a desktop exclusive hypervisor. To share folders between guest OS running on Hyper-V and the host operating system, we will use SMB file share to share a folder created on host machine with the guest. 
 
+1. Search for “Turn Windows Features on or off” in the Start Menu 
+2. Check the Service for NFS, SMB 1.0 and SMB Direct boxes.
+3. Search for “Advanced Sharing Settings” in the Start Menu
+4. Verify that Public Folder Sharing is Turned On
+5. Check the box that does switch it on and save the changes
+6. Create a Folder to keep our shareable contents. 
+7. Right-click on this new folder, go to Properties → Sharing and Click on Share.
+8. Copy the shared folder `\\PCName\Shared_Folder_Name` format.
+9. On Linux guest, replace the backslashes to forward slashed, e.g. `//PCName/Shared_Folder_Name`
+10. To access the contents of the shared folder, both the guest and host network should be on the same network.
+
+If your guest VM uses the Default Switch option by Hyper-V to provide connectivity, then your VM can talk to the main Windows installation.
+If your VM uses both Internal and External Switch (two virtual switches offered by hyper-V) it is important to note that both the host and guest must be on same network for SMB/CIFS file sharing to work.
+
+
+
+
 
 
 
